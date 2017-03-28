@@ -210,7 +210,7 @@ PROGRAM cdfheatc
             IF ( lfull ) THEN
                e3t(:,:, jk) = e31d(ik)
             ELSE
-               e3t(:,:, jk) = getvar(cn_fzgr, 'e3t', ik, npiglo, npjglo, kimin=iimin, kjmin=ijmin, ldiom=.TRUE.)
+               e3t(:,:, jk) = getvar(cn_fzgr, 'e3t_ps', ik, npiglo, npjglo, kimin=iimin, kjmin=ijmin, ldiom=.TRUE.)
             ENDIF
         ENDIF
         PRINT *, 'Compute weight'

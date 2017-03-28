@@ -206,8 +206,11 @@ PROGRAM cdfmean
         IF ( ierr /= 0 ) THEN
            npk = getdim (cf_in, 'nav_lev', cdtrue=cv_dep, kstatus=ierr)
            IF ( ierr /= 0 ) THEN
-              PRINT *,' assume file with no depth'
-              npk=0
+           npk = getdim (cf_in, 'lev', cdtrue=cv_dep, kstatus=ierr)
+              IF ( ierr /= 0 ) THEN
+                  PRINT *,' assume file with no depth'
+                  npk=0
+              ENDIF
            ENDIF
         ENDIF
      ENDIF

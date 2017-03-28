@@ -96,7 +96,7 @@ CONTAINS
     IF ( chkfile(SetFileName ,ld_verbose=.FALSE.) ) THEN ! look for another name
        WRITE(SetFileName,'(a,"_",a,"_grid_",a,".nc")') TRIM(cdconf), TRIM(cdtag), TRIM(cdgrid)
        IF ( chkfile( SetFileName, ld_verbose=.FALSE.) .AND. ll_stop  ) THEN
-          PRINT *,' ERROR : missing grid',TRIM(cdgrid),'or even grid_',TRIM(cdgrid),' file '
+          PRINT *,' ERROR : missing grid ',TRIM(cdgrid),'or even grid_',TRIM(cdgrid),' file '
           STOP
        ENDIF
     ENDIF
