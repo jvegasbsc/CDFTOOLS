@@ -3015,7 +3015,7 @@ CONTAINS
     CHARACTER(LEN=*), INTENT(in) :: cd_file
     TYPE(ncfile)                 :: GetNcFile
 
-    INTEGER(KIND=4) :: jvar                      ! loop index
+    INTEGER(KIND=4) :: jvar, jdim                      ! loop index
     INTEGER(KIND=4) :: ierr, idx, idy, idz, idt, idb   ! error status and dimids
     !!----------------------------------------------------------------------
     GetNcFile%c_fnam = cd_file
