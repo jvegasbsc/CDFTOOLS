@@ -1,0 +1,16 @@
+# module load gcc/4.9.1.hlrn netcdf/4.3.3.1 hdf5/1.8.14 
+
+INCS = -I$(CONDA_PREFIX)/include
+LIBS = -L$(CONDA_PREFIX)/lib
+
+NC4 = -D key_netcdf4
+#CMIP6 = -D key_CMIP6
+CMIP6 =
+ 
+F90=gfortran
+#OMP=-fopenmp
+OMP=
+FFLAGS=-lgfortran -lnetcdf -lnetcdff $(NC4) $(CMIP6) $(INCS) $(LIBS) -Wl,-rpath,$(CONDA_PREFIX)/lib -fno-second-underscore -ffree-line-length-256 $(OMP)
+
+INSTALL=$(HOME)/local/bin
+INSTALL_MAN=$(HOME)/local/man
